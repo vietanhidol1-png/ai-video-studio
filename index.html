@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI Video Studio — MVP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">▶</div>
+    <div><h1>AI Video Studio</h1><p>Free browser-based video builder</p></div>
+    <span class="pill">MVP · Local processing</span>
+  </header>
+
+  <main class="layout">
+    <section class="panel controls">
+      <h2>1. Kịch bản & nội dung</h2>
+      <label for="script">Kịch bản / lời thoại</label>
+      <textarea id="script" rows="5">Hello! Today, we're going to explore a surprising Minecraft world.</textarea>
+      <p class="hint">Mặc định dùng lời thoại tiếng Anh Mỹ (en-US). Bạn có thể sửa nội dung trước khi dựng.</p>
+
+      <div class="two-col">
+        <div>
+          <label for="voice">Giọng đọc</label>
+          <select id="voice">
+            <option value="en-US" selected>English (United States)</option>
+            <option value="vi-VN">Tiếng Việt</option>
+          </select>
+        </div>
+        <div>
+          <label for="ratio">Tỷ lệ video</label>
+          <select id="ratio">
+            <option value="16:9" selected>16:9 — YouTube</option>
+            <option value="9:16">9:16 — Shorts / TikTok</option>
+            <option value="1:1">1:1 — Vuông</option>
+          </select>
+        </div>
+      </div>
+
+      <h2>2. Hình ảnh / video</h2>
+      <label for="media">Tải ảnh hoặc clip có sẵn</label>
+      <input id="media" type="file" accept="image/*,video/*">
+      <p class="hint">Ảnh sẽ được giữ trên màn hình trong suốt thời lượng giọng đọc. Video sẽ được lặp hoặc cắt theo thời lượng âm thanh.</p>
+
+      <label for="audio">Hoặc tải giọng đọc đã tạo (WAV / MP3 / M4A)</label>
+      <input id="audio" type="file" accept="audio/*">
+      <p class="hint">Nếu không tải âm thanh, website sẽ thử dùng giọng đọc tích hợp sẵn của trình duyệt. Danh sách giọng tùy trình duyệt và hệ điều hành.</p>
+
+      <div class="check-row">
+        <input id="subtitles" type="checkbox" checked>
+        <label for="subtitles">Tạo phụ đề từ kịch bản</label>
+      </div>
+
+      <div class="actions">
+        <button id="previewVoice" class="secondary">▶ Nghe thử giọng</button>
+        <button id="build" class="primary">Dựng video</button>
+      </div>
+      <div id="status" class="status" role="status">Sẵn sàng. Hãy tải ảnh/clip và giọng đọc hoặc dùng giọng đọc trình duyệt.</div>
+      <div class="progress"><div id="progressBar"></div></div>
+    </section>
+
+    <section class="panel preview-panel">
+      <div class="preview-heading"><h2>3. Xem trước</h2><span id="ratioLabel">16:9</span></div>
+      <div id="preview" class="preview ratio-16-9">
+        <div id="placeholder" class="placeholder">
+          <div class="avatar">
+            <div class="avatar-hair"></div><div class="avatar-eyes"><i></i><i></i></div>
+            <div class="avatar-mouth"></div>
+          </div>
+          <strong>AI Avatar Preview</strong>
+          <span>Chưa có ảnh hoặc video</span>
+        </div>
+        <img id="imagePreview" alt="Ảnh nền xem trước" hidden>
+        <video id="videoPreview" controls playsinline hidden></video>
+        <div id="caption" class="caption" hidden></div>
+      </div>
+      <div class="export-row">
+        <div><strong>Đầu ra</strong><p>MP4 · phụ đề tùy chọn · âm thanh</p></div>
+        <a id="download" class="download disabled" aria-disabled="true">Tải video</a>
+      </div>
+      <div class="note">
+        <strong>Giới hạn MVP:</strong> bản này ghép media có sẵn với âm thanh bằng tính năng ghi hình màn hình canvas của trình duyệt. Nó chưa tự sinh video AI và chưa đồng bộ khẩu hình thật. Hỗ trợ xuất WebM trên trình duyệt tương thích; để có MP4, hãy chuyển đổi bằng FFmpeg.
+      </div>
+    </section>
+  </main>
+
+  <footer>AI Video Studio · Prototype miễn phí · Xử lý cục bộ trên thiết bị</footer>
+  <script src="app.js"></script>
+</body>
+</html>

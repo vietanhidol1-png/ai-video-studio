@@ -1,0 +1,39 @@
+*{box-sizing:border-box}
+:root{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#e8edf7;background:#0b1020}
+body{margin:0;background:radial-gradient(circle at 80% 0%,#18284a 0,transparent 35%),#0b1020}
+.topbar{display:flex;align-items:center;gap:14px;padding:22px max(20px,calc((100% - 1200px)/2));border-bottom:1px solid #26314b;background:#0d1427cc}
+.brand-mark{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#7c5cff;color:white;font-size:22px}
+h1{font-size:20px;margin:0 0 3px}.topbar p,footer{margin:0;color:#91a0bc;font-size:12px}
+.pill{margin-left:auto;border:1px solid #354363;border-radius:999px;padding:7px 11px;color:#b8c5df;font-size:12px}
+.layout{max-width:1200px;margin:28px auto;padding:0 20px;display:grid;grid-template-columns:minmax(320px,420px) minmax(0,1fr);gap:22px}
+.panel{background:#111a2e;border:1px solid #27334d;border-radius:20px;padding:22px;box-shadow:0 15px 45px #0002}
+h2{font-size:16px;margin:0 0 18px}label{display:block;font-size:13px;color:#cbd5e8;margin:12px 0 7px}
+textarea,select,input[type=file]{width:100%;background:#0b1223;border:1px solid #33415f;border-radius:10px;color:#eaf0fb;padding:11px;font:inherit;font-size:13px}
+textarea{resize:vertical;line-height:1.55}
+.hint{font-size:11px;line-height:1.5;color:#8d9bb6;margin:7px 0 15px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.check-row{display:flex;align-items:center;gap:9px;margin:18px 0}.check-row label{margin:0}
+input[type=checkbox]{accent-color:#8a6cff;width:16px;height:16px}
+.actions{display:flex;gap:10px;margin-top:15px}
+button,.download{border:0;border-radius:11px;padding:12px 15px;font-weight:700;font-size:13px;cursor:pointer;text-decoration:none;text-align:center}
+button{flex:1}.primary{background:#7c5cff;color:white}.secondary{background:#253452;color:#dce6fa}
+button:disabled{opacity:.5;cursor:wait}
+.status{font-size:12px;color:#b6c7e6;margin:15px 0 8px;min-height:18px}
+.progress{height:5px;background:#27334d;border-radius:9px;overflow:hidden}.progress div{height:100%;width:0;background:#8b70ff;transition:width .2s}
+.preview-heading{display:flex;align-items:center;justify-content:space-between}.preview-heading h2{margin-bottom:16px}
+#ratioLabel{font-size:12px;color:#9dadd0;border:1px solid #354363;border-radius:8px;padding:5px 9px}
+.preview{position:relative;width:100%;aspect-ratio:16/9;background:#080d19;border:1px solid #33415f;border-radius:14px;overflow:hidden;display:grid;place-items:center}
+.preview.ratio-9-16{aspect-ratio:9/16;max-height:65vh;width:auto;max-width:100%;margin:auto}
+.preview.ratio-1-1{aspect-ratio:1/1}
+.preview img,.preview video{width:100%;height:100%;object-fit:contain;background:#080d19}
+.placeholder{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:9px;color:#8d9bb6;font-size:12px}
+.avatar{width:92px;height:110px;background:#202b4b;border:4px solid #566a9a;border-radius:15px;position:relative;overflow:hidden}
+.avatar-hair{height:27px;background:#141927;border-bottom:4px solid #53678e}
+.avatar-eyes{display:flex;justify-content:space-around;margin-top:22px}.avatar-eyes i{width:13px;height:13px;background:#5be4ff;border-radius:3px}
+.avatar-mouth{width:24px;height:5px;background:#ffb7c4;margin:16px auto;border-radius:6px}
+.caption{position:absolute;left:5%;right:5%;bottom:6%;padding:8px 12px;background:#000b;color:white;text-align:center;font-size:clamp(13px,2vw,22px);font-weight:700;text-shadow:0 2px 4px #000;border-radius:7px;white-space:pre-wrap}
+.export-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px}.export-row strong{font-size:13px}.export-row p{margin:4px 0 0;color:#8d9bb6;font-size:11px}
+.download{background:#254c3d;color:#c2ffdf}.download.disabled{opacity:.4;pointer-events:none}
+.note{font-size:12px;line-height:1.6;color:#9aaaca;background:#0c1426;border:1px solid #293652;padding:12px;border-radius:10px;margin-top:18px}.note strong{color:#f2d28b}
+footer{text-align:center;padding:24px}
+@media(max-width:850px){.layout{grid-template-columns:1fr;margin-top:16px}.topbar{padding:16px 20px}.pill{display:none}}
